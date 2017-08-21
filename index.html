@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="description" content="Progressive Web App. Nous Développons avec vous vos v1 ou MVP afin de tester votre marché. Freelance Développeur Web, Analyse de données à Paris, Lyon, Grenoble France.">
+  <meta name="author" content="Mickael Bolnet">
+  <link rel="icon" href="/icon/favicon-32x32.png">
+  <title>GeTaLab.io -- EBENE SAS</title>
+
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="GeTaLaB">
+  <meta itemprop="description" content="Progressive Web App. Nous Développons avec vous vos v1 ou MVP afin de tester votre marché. Freelance Développeur Web, Analyse de données à Paris, Lyon, Grenoble France">
+  <meta itemprop="image" content="/icon/favicon-32x32.png">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@GlenDeuhrs">
+  <meta name="twitter:title" content="GeTaLaB">
+  <meta name="twitter:description" content="Progressive Web App. Nous Développons avec vous vos v1 ou MVP afin de tester votre marché. Freelance Développeur Web, Analyse de données à Paris, Lyon, Grenoble France">
+  <meta name="twitter:creator" content="@GlenDeuhrs">
+  <!-- Twitter summary card with large image must be at least 280x150px -->
+  <meta name="twitter:image:src" content="/img/profile.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="GeTaLaB" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://www.getalab.io/" />
+  <meta property="og:image" content="/img/profile.jpg" />
+  <meta property="og:description" content="Progressive Web App. Nous Développons avec vous vos v1 ou MVP afin de tester votre marché. Freelance Développeur Web, Analyse de données à Paris, Lyon, Grenoble France" />
+  <meta property="og:site_name" content="GeTaLaB" />
+  <meta property="article:published_time" content="2016-08-15T05:59:00+01:00" />
+  <meta property="article:modified_time" content="2016-08-19T19:08:47+01:00" />
+  <meta property="article:section" content="Progressive Web App. Nous Développons avec vous vos v1 ou MVP afin de tester votre marché. Freelance Développeur Web, Analyse de données à Paris, Lyon, Grenoble France" />
+  <meta property="article:tag" content="Progressive Web App" />
+
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/icon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/icon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+  <link rel="manifest" href="/icon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/icon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="alternate" hreflang="fr" href="http://www.getalab.io/" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+</head>
+
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-103452152-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/vivus/latest/vivus.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg.js"></script>
+
+<script type="text/javascript">
+var KEY_ENTER=13;
+$(document).ready(function(){
+  var firstMessage = true
+  var $input=$(".chat-input")
+    ,$sendButton=$(".chat-send")
+    ,$messagesContainer=$(".chat-messages")
+    ,$messagesList=$(".chat-messages-list")
+    ,$effectContainer=$(".chat-effect-container")
+    ,$infoContainer=$(".chat-info-container")
+
+    ,messages=0
+    ,bleeding=100
+    ,isFriendTyping=false
+    ,incomingMessages=0
+    ,lastMessage=""
+  ;
+  
+  var lipsum="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+  function gooOn(){
+    setFilter('url(#goo)');
+  }
+  function gooOff(){
+    setFilter('none');
+  }
+  function setFilter(value){
+    $effectContainer.css({
+      webkitFilter:value,
+      mozFilter:value,
+      filter:value,
+    });
+  }
+
+  function addMessage(message,self){
+    var $messageContainer=$("<li/>")
+      .addClass('chat-message '+(self?'chat-message-self':'chat-message-friend'))
+      .appendTo($messagesList)
+    ;
+    var $messageBubble=$("<div/>")
+      .addClass('chat-message-bubble')
+      .appendTo($messageContainer)
+    ;
+    $messageBubble.text(message);
+
+    var oldScroll=$messagesContainer.scrollTop();
+    $messagesContainer.scrollTop(9999999);
+    var newScroll=$messagesContainer.scrollTop();
+    var scrollDiff=newScroll-oldScroll;
+    TweenMax.fromTo(
+      $messagesList,0.4,{
+        y:scrollDiff
+      },{
+        y:0,
+        ease:Quint.easeOut
+      }
+    );
+
+    return {
+      $container:$messageContainer,
+      $bubble:$messageBubble
+    };
+  }
+  function sendMessage(){
+    var message=$input.text();
+    
+    if(message=="") return;
+    
+    lastMessage=message;
+
+    var messageElements=addMessage(message,true)
+      ,$messageContainer=messageElements.$container
+      ,$messageBubble=messageElements.$bubble
+    ;
+
+    var oldInputHeight=$(".chat-input-bar").height();
+    $input.text('');
+    updateChatHeight();
+    var newInputHeight=$(".chat-input-bar").height();
+    var inputHeightDiff=newInputHeight-oldInputHeight
+
+    var $messageEffect=$("<div/>")
+      .addClass('chat-message-effect')
+      .append($messageBubble.clone())
+      .appendTo($effectContainer)
+      .css({
+        left:$input.position().left-12,
+        top:$input.position().top+bleeding+inputHeightDiff
+      })
+    ;
+
+
+    var messagePos=$messageBubble.offset();
+    var effectPos=$messageEffect.offset();
+    var pos={
+      x:messagePos.left-effectPos.left,
+      y:messagePos.top-effectPos.top
+    }
+
+    var $sendIcon=$sendButton.children("i");
+    TweenMax.to(
+      $sendIcon,0.15,{
+        x:30,
+        y:-30,
+        force3D:true,
+        ease:Quad.easeOut,
+        onComplete:function(){
+          TweenMax.fromTo(
+            $sendIcon,0.15,{
+              x:-30,
+              y:30
+            },
+            {
+              x:0,
+              y:0,
+              force3D:true,
+              ease:Quad.easeOut
+            }
+          );
+        }
+      }
+    );
+
+    gooOn();
+
+    
+    TweenMax.from(
+      $messageBubble,0.8,{
+        y:-pos.y,
+        ease:Sine.easeInOut,
+        force3D:true
+      }
+    );
+
+    var startingScroll=$messagesContainer.scrollTop();
+    var curScrollDiff=0;
+    var effectYTransition;
+    var setEffectYTransition=function(dest,dur,ease){
+      return TweenMax.to(
+        $messageEffect,dur,{
+          y:dest,
+          ease:ease,
+          force3D:true,
+          onUpdate:function(){
+            var curScroll=$messagesContainer.scrollTop();
+            var scrollDiff=curScroll-startingScroll;
+            if(scrollDiff>0){
+              curScrollDiff+=scrollDiff;
+              startingScroll=curScroll;
+
+              var time=effectYTransition.time();
+              effectYTransition.kill();
+              effectYTransition=setEffectYTransition(pos.y-curScrollDiff,0.8-time,Sine.easeOut);
+            }
+          }
+        }
+      );
+    }
+
+    effectYTransition=setEffectYTransition(pos.y,0.8,Sine.easeInOut);
+    
+    // effectYTransition.updateTo({y:800});
+
+    TweenMax.from(
+      $messageBubble,0.6,{
+        delay:0.2,
+        x:-pos.x,
+        ease:Quad.easeInOut,
+        force3D:true
+      }
+    );
+    TweenMax.to(
+      $messageEffect,0.6,{
+        delay:0.2,
+        x:pos.x,
+        ease:Quad.easeInOut,
+        force3D:true
+      }
+    );
+
+    TweenMax.from(
+      $messageBubble,0.2,{
+        delay:0.65,
+        opacity:0,
+        ease:Quad.easeInOut,
+        onComplete:function(){
+          TweenMax.killTweensOf($messageEffect);
+          $messageEffect.remove();
+          if(!isFriendTyping)
+            gooOff();
+        }
+      }
+    );
+
+    messages++;
+
+    if(Math.random()<0.65 || lastMessage.indexOf("?")>-1 || messages==1) getReply();
+  }
+  function getReply(){
+    if(incomingMessages>2) return;
+    incomingMessages++;
+    var typeStartDelay=1000+(lastMessage.length*40)+(Math.random()*1000);
+    setTimeout(friendIsTyping,typeStartDelay);
+
+    var source=lipsum.toLowerCase();
+    source=source.split(" ");
+    var start=Math.round(Math.random()*(source.length-1));
+    var length=Math.round(Math.random()*13)+1;
+    var end=start+length;
+    if(end>=source.length){
+      end=source.length-1;
+      length=end-start;
+    }
+    var message="";
+    for (var i = 0; i < length; i++) {
+      message+=source[start+i]+(i<length-1?" ":"");
+    };
+    message+=Math.random()<0.4?"?":"";
+    message+=Math.random()<0.2?" :)":(Math.random()<0.2?" :(":"");
+
+    var typeDelay=300+(lastMessage.length*200)+(Math.random()*1000);
+
+    setTimeout(function(){
+      if (firstMessage) {
+        receiveMessage('Tu souhaites réaliser un nouveau projet ? De quoi s\'agit-il ?');
+        firstMessage = false
+      } else {
+        receiveMessage('Merci pour ta réponse !');
+      }
+      // receiveMessage(message);
+    },typeDelay+typeStartDelay);
+
+    setTimeout(function(){
+      incomingMessages--;
+      // if(Math.random()<0.1){
+      //   getReply();
+      // }
+      if(incomingMessages<=0){
+        friendStoppedTyping();
+      }
+    },typeDelay+typeStartDelay);
+  }
+  function friendIsTyping(){
+    if(isFriendTyping) return;
+
+    isFriendTyping=true;
+
+    var $dots=$("<div/>")
+      .addClass('chat-effect-dots')
+      .css({
+        top:-30+bleeding,
+        left:10
+      })
+      .appendTo($effectContainer)
+    ;
+    for (var i = 0; i < 3; i++) {
+      var $dot=$("<div/>")
+        .addClass("chat-effect-dot")
+        .css({
+          left:i*20
+        })
+        .appendTo($dots)
+      ;
+      TweenMax.to($dot,0.3,{
+        delay:-i*0.1,
+        y:30,
+        yoyo:true,
+        repeat:-1,
+        ease:Quad.easeInOut
+      })
+    };
+
+    var $info=$("<div/>")
+      .addClass("chat-info-typing")
+      .text("Your friend is typing...")
+      .css({
+        transform:"translate3d(0,30px,0)"
+      })
+      .appendTo($infoContainer)
+
+    TweenMax.to($info, 0.3,{
+      y:0,
+      force3D:true
+    });
+
+    gooOn();
+  }
+
+  function friendStoppedTyping(){
+    if(!isFriendTyping) return
+
+    isFriendTyping=false;
+
+    var $dots=$effectContainer.find(".chat-effect-dots");
+    TweenMax.to($dots,0.3,{
+      y:40,
+      force3D:true,
+      ease:Quad.easeIn,
+    });
+
+    var $info=$infoContainer.find(".chat-info-typing");
+    TweenMax.to($info,0.3,{
+      y:30,
+      force3D:true,
+      ease:Quad.easeIn,
+      onComplete:function(){
+        $dots.remove();
+        $info.remove();
+
+        gooOff();
+      }
+    });
+  }
+  function receiveMessage(message){
+    var messageElements=addMessage(message,false)
+      ,$messageContainer=messageElements.$container
+      ,$messageBubble=messageElements.$bubble
+    ;
+
+    TweenMax.set($messageBubble,{
+      transformOrigin:"60px 50%"
+    })
+    TweenMax.from($messageBubble,0.4,{
+      scale:0,
+      force3D:true,
+      ease:Back.easeOut
+    })
+    TweenMax.from($messageBubble,0.4,{
+      x:-100,
+      force3D:true,
+      ease:Quint.easeOut
+    })
+  }
+
+  function updateChatHeight(){
+    // $messagesContainer.css({
+    //   height:460-$(".chat-input-bar").height()
+    // });
+  }
+
+  $input.keydown(function(event) {
+    ga('send', 'event', 'sendMessage', 'KeyEnter', atob(window.location.search.substring(1)) + ' : ' + $input.text());
+    if(event.keyCode==KEY_ENTER){
+      event.preventDefault();
+      sendMessage();
+    }
+  });
+  $sendButton.click(function(event){
+    ga('send', 'event', 'sendMessage', 'SendButton', atob(window.location.search.substring(1)) + ' : ' + $input.text());
+    event.preventDefault();
+    sendMessage();
+    // $input.focus();
+  });
+  $sendButton.on("touchstart",function(event){
+    event.preventDefault();
+    sendMessage();
+    // $input.focus();
+  });
+
+  $input.on("input",function(){
+    updateChatHeight();
+  });
+
+  gooOff();
+  updateChatHeight();
+  getReply();
+})
+</script>
+</html>
